@@ -1,5 +1,5 @@
-import SwiftUI
 import AppKit
+import SwiftUI
 
 struct MenuBarContentView: View {
     @ObservedObject var store: PomodoroTimerStore
@@ -53,7 +53,7 @@ struct MenuBarContentView: View {
 
             HStack(spacing: 8) {
                 Button("Settings") {
-                    NSApp.sendAction(Selector(("showSettingsWindow:")), to: nil, from: nil)
+                    store.showSettings()
                 }
                 Button("Quit") {
                     NSApplication.shared.terminate(nil)

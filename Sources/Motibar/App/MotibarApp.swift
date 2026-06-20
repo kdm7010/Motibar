@@ -20,8 +20,5 @@ struct MotibarApp: App {
         }
         .menuBarExtraStyle(.window)
 
-        Settings {
-            SettingsView(store: timerStore)
-        }
     }
 }

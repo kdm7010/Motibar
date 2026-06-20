@@ -16,6 +16,7 @@ final class PomodoroTimerStore: ObservableObject {
     private let defaults: UserDefaults
     private let mediaPlayer = MediaPlayer()
     private let popupPresenter = CompletionPopupPresenter()
+    private let settingsPresenter = SettingsWindowPresenter()
 
     init(defaults: UserDefaults = .standard) {
         self.defaults = defaults
@@ -105,6 +106,10 @@ final class PomodoroTimerStore: ObservableObject {
     func clearAudio() {
         audioPath = ""
         defaults.removeObject(forKey: DefaultsKey.audioPath)
+    }
+
+    func showSettings() {
+        settingsPresenter.show(store: self)
     }
 
     private func startTicker() {
