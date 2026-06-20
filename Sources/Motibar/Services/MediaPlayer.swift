@@ -22,4 +22,9 @@ final class MediaPlayer {
             NSSound.beep()
         }
     }
+
+    func stop() {
+        player?.stop()
+        player = nil
+    }
 }

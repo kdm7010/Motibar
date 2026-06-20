@@ -138,11 +138,14 @@ final class PomodoroTimerStore: ObservableObject {
     private func completeCurrentPhase() {
         let completedPhase = phase
         isRunning = false
-        mediaPlayer.playSound(atPath: audioPath)
         popupPresenter.show(
             title: completedPhase.completionTitle,
-            imagePath: imagePath
+            imagePath: imagePath,
+            onClose: { [weak self] in
+                self?.mediaPlayer.stop()
+            }
         )
+        mediaPlayer.playSound(atPath: audioPath)
 
         phase = completedPhase.next
         remainingSeconds = durationSeconds(for: phase)
