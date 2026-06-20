@@ -1,13 +1,13 @@
 # Motibar
 
-Motibar is a small macOS menu bar Pomodoro timer. It lets you choose your own completion image and alarm sound so each work or break session can end with a personalized prompt.
+Motibar is a small macOS menu bar Pomodoro timer. It lets you choose separate completion images and alarm sounds for work and break sessions so each transition can end with a personalized prompt.
 
 ## Features
 
 - Menu bar resident Pomodoro timer
 - Work and break duration controls
-- Custom image popup when a timer finishes
-- Custom audio alarm when a timer finishes
+- Custom image popup for work and break completions
+- Custom audio alarm for work and break completions
 - Settings are stored locally with `UserDefaults`
 - SwiftPM-based build with no third-party dependencies
 
@@ -37,10 +37,10 @@ Useful modes:
 1. Launch Motibar.
 2. Open the menu bar item.
 3. Set work and break durations.
-4. Open Settings to choose an image file and an audio file.
+4. Open Settings to choose separate image and audio files for work completion and break completion.
 5. Start the timer.
 
-When a work or break timer finishes, Motibar plays the selected audio file and shows the selected image in a popup. If no media is selected or playback fails, the app falls back to the system beep and a simple completion view.
+When a work or break timer finishes, Motibar plays the audio file and shows the image configured for that specific phase. If no media is selected or playback fails, the app falls back to the system beep and a simple completion view.
 
 ## Open Source Notes
 

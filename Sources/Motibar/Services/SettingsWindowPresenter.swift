@@ -14,7 +14,7 @@ final class SettingsWindowPresenter: NSObject, NSWindowDelegate {
 
         let hostingView = NSHostingView(rootView: SettingsView(store: store))
         let settingsWindow = NSWindow(
-            contentRect: NSRect(x: 0, y: 0, width: 540, height: 360),
+            contentRect: NSRect(x: 0, y: 0, width: 560, height: 520),
             styleMask: [.titled, .closable, .miniaturizable],
             backing: .buffered,
             defer: false

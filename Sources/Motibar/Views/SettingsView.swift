@@ -17,19 +17,35 @@ struct SettingsView: View {
                 ), in: 1...180)
             }
 
-            Section("Motivation media") {
+            Section("Work completion") {
                 FileSelectionRow(
-                    title: "Completion image",
-                    path: store.imagePath,
-                    chooseAction: store.chooseImage,
-                    clearAction: store.clearImage
+                    title: "Image",
+                    path: store.workImagePath,
+                    chooseAction: store.chooseWorkImage,
+                    clearAction: store.clearWorkImage
                 )
 
                 FileSelectionRow(
                     title: "Alarm sound",
-                    path: store.audioPath,
-                    chooseAction: store.chooseAudio,
-                    clearAction: store.clearAudio
+                    path: store.workAudioPath,
+                    chooseAction: store.chooseWorkAudio,
+                    clearAction: store.clearWorkAudio
+                )
+            }
+
+            Section("Break completion") {
+                FileSelectionRow(
+                    title: "Image",
+                    path: store.breakImagePath,
+                    chooseAction: store.chooseBreakImage,
+                    clearAction: store.clearBreakImage
+                )
+
+                FileSelectionRow(
+                    title: "Alarm sound",
+                    path: store.breakAudioPath,
+                    chooseAction: store.chooseBreakAudio,
+                    clearAction: store.clearBreakAudio
                 )
             }
         }
